@@ -1,0 +1,245 @@
+/*
+==========================================================================
+COLORS
+==========================================================================
+*/
+/*
+==========================================================================
+MIXINS
+==========================================================================
+*/
+/*/
+//FONTS///*/
+/*
+==========================================================================
+LINKS
+==========================================================================
+*/
+a {
+  color: #B64906;
+  text-decoration: none;
+}
+
+a:active, a:focus, a:hover {
+  color: #EC8B3E;
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 5px 0 0;
+  background: #323730;
+}
+
+main .output-wrapper {
+  position: relative;
+  height: 60px;
+  padding-right: 10px;
+  width: 284px;
+  border: 1px solid black;
+  background: black;
+  color: #a66841;
+  text-align: right;
+  font-family: 'Rationale', sans-serif;
+  font-size: 50px;
+  text-shadow: 0 0 5px #B64906;
+}
+
+main .output-wrapper:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background: transparent;
+  background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(255, 255, 255, 0.2) 50px, rgba(255, 255, 255, 0.2) 100px);
+  background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 50px, rgba(255, 255, 255, 0.2) 50px, rgba(255, 255, 255, 0.2) 100px);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(255, 255, 255, 0.2) 50px, rgba(255, 255, 255, 0.2) 100px);
+}
+
+main .output-wrapper #output {
+  -webkit-animation: OpacityAnimation 1s ease-in-out infinite;
+  animation: OpacityAnimation 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes OpacityAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes OpacityAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #BEBFAD;
+}
+
+.container .wrapper {
+  width: 296px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0 10px;
+}
+
+.title {
+  float: left;
+  margin: 10px;
+}
+
+.title h1 {
+  font-size: 16px;
+  padding: 3px;
+}
+
+.gray-wrapper {
+  border: 1px inset #6E7776;
+  background: #829196;
+}
+
+/*
+==========================================================================
+BUTTONS
+==========================================================================
+*/
+.buttons {
+  border: 4px inset #A6A39A;
+}
+
+.clear-button {
+  margin-top: 4px;
+  float: right;
+  width: 72px;
+  border: 4px inset #A6A39A;
+  border-bottom: none;
+  margin-bottom: -4px;
+}
+
+.btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 35px;
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid black;
+}
+
+.btn.orange {
+  float: right;
+  background: #B64906;
+  background: -webkit-linear-gradient(right, #ec8b3e 0%, #ec8b3e 29%, #b64906 81%, #b64906 100%);
+  background: linear-gradient(-90deg, #ec8b3e 0%, #ec8b3e 29%, #b64906 81%, #b64906 100%);
+}
+
+.btn.orange .inner {
+  color: #D8D6D9;
+  border: 2px solid #EC8B3E;
+  background: #EC8B3E;
+  background: -webkit-linear-gradient(left, #ec8b3e 0%, #ec8b3e 29%, #b64906 81%, #b64906 100%);
+  background: linear-gradient(90deg, #ec8b3e 0%, #ec8b3e 29%, #b64906 81%, #b64906 100%);
+}
+
+.btn.orange.active, .btn.orange:active, .btn.orange:focus {
+  outline-style: none;
+  background: #B64906;
+}
+
+.btn.orange.active .inner, .btn.orange:active .inner, .btn.orange:focus .inner {
+  background: #EC8B3E;
+  background: -webkit-linear-gradient(left, #ec8b3e 0%, #ec8b3e 1%, #b64906 50%, #b64906 100%);
+  background: linear-gradient(90deg, #ec8b3e 0%, #ec8b3e 1%, #b64906 50%, #b64906 100%);
+}
+
+.btn.grey {
+  background: #323730;
+  background: -webkit-linear-gradient(right, #767b74 0%, #767b74 29%, #323730 81%, #323730 100%);
+  background: linear-gradient(-90deg, #767b74 0%, #767b74 29%, #323730 81%, #323730 100%);
+}
+
+.btn.grey .inner {
+  color: #D8D6D9;
+  border: 2px solid #767B74;
+  background: #767B74;
+  background: -webkit-linear-gradient(left, #767b74 0%, #767b74 29%, #323730 81%, #323730 100%);
+  background: linear-gradient(90deg, #767b74 0%, #767b74 29%, #323730 81%, #323730 100%);
+}
+
+.btn.grey.active, .btn.grey:active, .btn.grey:focus {
+  outline: none;
+  background: #323730;
+}
+
+.btn.grey.active .inner, .btn.grey:active .inner, .btn.grey:focus .inner {
+  background: #767B74;
+  background: -webkit-linear-gradient(left, #767b74 0%, #767b74 1%, #323730 50%, #323730 100%);
+  background: linear-gradient(90deg, #767b74 0%, #767b74 1%, #323730 50%, #323730 100%);
+}
+
+.btn.white {
+  background: #CDC8B4;
+  background: -webkit-linear-gradient(right, #fefcef 0%, #fefcef 29%, #cdc8b4 81%, #cdc8b4 100%);
+  background: linear-gradient(-90deg, #fefcef 0%, #fefcef 29%, #cdc8b4 81%, #cdc8b4 100%);
+}
+
+.btn.white .inner {
+  color: #5F5E59;
+  border: 2px solid #FEFCEF;
+  background: #FEFCEF;
+  background: -webkit-linear-gradient(left, #fefcef 0%, #fefcef 29%, #cdc8b4 81%, #cdc8b4 100%);
+  background: linear-gradient(90deg, #fefcef 0%, #fefcef 29%, #cdc8b4 81%, #cdc8b4 100%);
+}
+
+.btn.white.active, .btn.white:active, .btn.white:focus {
+  outline: none;
+  background: #CDC8B4;
+}
+
+.btn.white.active .inner, .btn.white:active .inner, .btn.white:focus .inner {
+  background: #FEFCEF;
+  background: -webkit-linear-gradient(left, #fefcef 0%, #fefcef 1%, #cdc8b4 50%, #cdc8b4 100%);
+  background: linear-gradient(90deg, #fefcef 0%, #fefcef 1%, #cdc8b4 50%, #cdc8b4 100%);
+}
+
+.btn .inner {
+  display: block;
+  border-radius: 15px;
+  width: 64px;
+  height: 64px;
+  margin: 1px;
+  text-align: center;
+  line-height: 68px;
+  border-radius: 40% / 20px;
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+footer {
+  padding: 10px;
+  font-size: 14px;
+}

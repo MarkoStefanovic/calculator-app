@@ -1,0 +1,293 @@
+
+/*
+==========================================================================
+COLORS
+==========================================================================
+*/
+$jaffa: #EC8B3E;
+$jaffaRGBA: rgba(236,139,62,1);
+$vesuvius: #B64906;
+$vesuviusRGBA: rgba(182,73,6,1);
+$heavy-metal: #323730;
+$heavy-metalRGBA: rgba(50,55,48,1);
+$camouflage-green: #767B74;
+$camouflage-greenRGBA: rgba(118,123,116,1);
+$foggy-gray: #CDC8B4;
+$foggy-grayRGBA: rgba(205,200,180,1);
+$orange-white: #FEFCEF;
+$orange-whiteRGBA: rgba(254,252,239,1);
+$chicago: #5F5E59;
+$mischka: #D8D6D9;
+$oslo-gray: #829196;
+$sirocco: #6E7776;
+$eagle: #BEBFAD;
+$dawn: #A6A39A;
+/*
+==========================================================================
+MIXINS
+==========================================================================
+*/
+// linear gradient mixin
+@mixin lGradient($deg,$color1,$color2,$num1,$num2,$num3,$num4) {
+  background: linear-gradient($deg, $color1 $num1, $color1 $num2, $color2 $num3, $color2 $num4);
+}
+// repeating linear gradient mixin
+@mixin rGradien($color) {
+  background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 50px, $color 50px, $color 100px);
+  background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 50px, $color 50px, $color 100px);
+  background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 50px, $color 50px, $color 100px);
+  background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 50px, $color 50px, $color 100px);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 50px, $color 50px, $color 100px);
+}
+@mixin opacityEffect() {
+  -webkit-animation: OpacityAnimation 1s ease-in-out infinite;
+  -moz-animation: OpacityAnimation 1s ease-in-out infinite;
+  animation: OpacityAnimation 1s ease-in-out infinite;
+  @-webkit-keyframes OpacityAnimation {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes OpacityAnimation {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes OpacityAnimation {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+/*/
+//FONTS///*/
+//font-family: 'Orbitron', sans-serif;
+//font-family: 'Rationale', sans-serif;
+/*
+==========================================================================
+LINKS
+==========================================================================
+*/
+a {
+  color: $vesuvius;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $jaffa;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 5px 0 0;
+  background: $heavy-metal;
+}
+
+main {
+  .output-wrapper {
+    position: relative;
+    height: 60px;
+    padding-right: 10px;
+    width: 284px;
+    border: 1px solid black;
+    background: black;
+    color: #a66841;
+    text-align: right;
+    font-family: 'Rationale', sans-serif;
+    font-size: 50px;
+    text-shadow: 0 0 5px $vesuvius;
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      background: transparent;
+      @include rGradien(rgba(255,255,255,0.2));
+    }
+
+    #output {
+      @include opacityEffect();
+    }
+  }
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: $eagle;
+
+  .wrapper {
+    width: 296px;
+    //max-width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0 10px;
+  }
+}
+
+.title {
+  float: left;
+  margin: 10px;
+
+  h1 {
+    font-size: 16px;
+    padding: 3px;
+  }
+}
+
+.gray-wrapper {
+  border: 1px inset $sirocco;
+  background: $oslo-gray;
+}
+/*
+==========================================================================
+BUTTONS
+==========================================================================
+*/
+.buttons {
+  border: 4px inset $dawn;
+}
+
+.clear-button {
+  margin-top: 4px;
+  float: right;
+  width: 72px;
+  border: 4px inset $dawn;
+  border-bottom: none;
+  margin-bottom: -4px;
+}
+
+.btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 35px;
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid black;
+  // orange btn
+  &.orange {
+    float: right;
+    background: $vesuvius;
+    @include lGradient(-90deg, $jaffaRGBA, $vesuviusRGBA, 0%, 29%, 81%, 100% );
+
+    .inner {
+      color: $mischka;
+      border: 2px solid $jaffa;
+      background: $jaffa;
+      @include lGradient(90deg, $jaffaRGBA, $vesuviusRGBA, 0%, 29%, 81%, 100% );
+    }
+    // orange btn active
+    &.active,
+    &:active,
+    &:focus {
+      outline-style: none;
+      background: $vesuvius;
+
+      .inner {
+        background: $jaffa;
+        @include lGradient(90deg, $jaffaRGBA, $vesuviusRGBA, 0%, 1%, 50%, 100% );
+      }
+    }
+  }
+  // gray btn
+  &.grey {
+    background: $heavy-metal;
+    @include lGradient(-90deg, $camouflage-greenRGBA, $heavy-metalRGBA, 0%, 29%, 81%, 100% );
+
+    .inner {
+      color: $mischka;
+      border: 2px solid $camouflage-green;
+      background: $camouflage-green;
+      @include lGradient(90deg, $camouflage-greenRGBA, $heavy-metalRGBA, 0%, 29%, 81%, 100% );
+    }
+    // gray btn active
+    &.active,
+    &:active,
+    &:focus {
+      outline: none;
+      background: $heavy-metal;
+
+      .inner {
+        background: $camouflage-green;
+        @include lGradient(90deg, $camouflage-greenRGBA, $heavy-metalRGBA, 0%, 1%, 50%, 100% );
+      }
+    }
+  }
+  // white btn
+  &.white {
+    background: $foggy-gray;
+    @include lGradient(-90deg, $orange-whiteRGBA, $foggy-grayRGBA, 0%, 29%, 81%, 100% );
+
+    .inner {
+      color: $chicago;
+      border: 2px solid $orange-white;
+      background: $orange-white;
+      @include lGradient(90deg, $orange-whiteRGBA, $foggy-grayRGBA, 0%, 29%, 81%, 100% );
+    }
+    // white btn active
+    &.active,
+    &:active,
+    &:focus {
+      outline: none;
+      background: $foggy-gray;
+
+      .inner {
+        background: $orange-white;
+        @include lGradient(90deg, $orange-whiteRGBA, $foggy-grayRGBA, 0%, 1%, 50%, 100% );
+      }
+    }
+  }
+
+  .inner {
+    display: block;
+    border-radius: 15px;
+    width: 64px;
+    height: 64px;
+    margin: 1px;
+    text-align: center;
+    line-height: 68px;
+    border-radius: 40% / 20px;
+    text-shadow: -1px -1px 0 rgba(255,255,255,0.5), 1px 1px 0 rgba(0,0,0,0.4);
+  }
+}
+
+footer {
+  padding: 10px;
+  font-size: 14px;
+}
